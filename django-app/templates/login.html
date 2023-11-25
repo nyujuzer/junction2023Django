@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%block title%} hello world{%endblock%}
+
+{% block content %}
+<div class="container mt-5 d-flex flex-column bg-img-frame align-items-center">
+    <h2 class="mb-4">Login</h2>
+    <form method="post" action="{% url 'login' %}" class="needs-validation" novalidate>
+        {% csrf_token %}
+        
+        <!-- Username Field -->
+        <div class="mb-3 d-flex justify-content-between">
+            <label for="{{ form.username.id_for_label }}" class="form-label align-self-start">Username</label>
+                <input type="text" name="username" id="username">
+            <div class="invalid-feedback">
+                {{ form.username.errors }}
+            </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="mb-3 d-flex justify-content-between">
+            <label for="{{ form.password1.id_for_label }}" class="form-label align-self-start">Password</label>
+                <input type="password" name="password" id="password">
+            <div class="invalid-feedback">
+                {{ form.password1.errors }}
+            </div>
+        </div>
+        <input type="hidden" name="password2" value="">
+        <div class="row col btn bg-secondary-color d-block mb-5">
+            <div class="row">
+                <button type="submit" class="btn text-light">Upload</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+:root {
+  --imgframe: #027BC2;
+  --secondary-color: #3A1772;
+  --light-gray: #9d9d9d;
+  --attention: #FFDD4A;
+}
+
+/* Background Color Classes */
+.bg-img-frame {
+  background-color: var(--imgframe) !important;
+}
+
+.bg-secondary-color {
+  background-color: var(--secondary-color) !important;
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray) !important;
+}
+
+.bg-attention {
+  background-color: var(--attention) !important;
+}
+
+.bg-test {
+  background-color: var(--attention);
+}
+
+/* Text Color Classes */
+.text-imgframe {
+  color: var(--imgframe);
+}
+
+.text-secondary-color {
+  color: var(--secondary-color);
+}
+
+.text-light-gray {
+  color: var(--light-gray);
+}
+
+.text-attention {
+  color: var(--attention);
+}
+.text-black{
+  color:black;
+}
+
+/* Button Color Classes */
+.btn-imgframe {
+  background-color: var(--imgframe);
+  border-color: var(--imgframe);
+  color: #fff;
+}
+
+.btn-secondary-color {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-light-gray {
+  background-color: var(--light-gray);
+  border-color: var(--light-gray);
+  color: #fff;
+}
+
+.btn-attention {
+  background-color: var(--attention);
+  border-color: var(--attention);
+  color: #fff;
+}
+
+.fss-1 {
+  font-size: calc(0.975rem + 2.7vw) !important
+}
+
+.fss-2 {
+  font-size: calc(0.95rem + 3vw) !important
+}
+
+.fss-3 {
+  font-size: calc(0.925rem + 3.3vw) !important
+}
+
+.fss-4 {
+  font-size: calc(0.9rem + 3.6vw) !important
+}
+
+.fss-5 {
+  font-size: 0.875rem !important
+}
+
+.fss-6 {
+  font-size: calc(0.85rem + 3.9vw) !important
+}
+
+.fss-7 {
+  font-size: calc(0.825rem + 4.2vw) !important
+}
+
+.fss-8 {
+  font-size: calc(0.8rem + 4.5vw) !important
+}
+
+.fss-9 {
+  font-size: calc(0.775rem + 4.8vw) !important
+}
+
+.fss-10 {
+  font-size: 0.75rem !important
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: var(--imgframe);
+}

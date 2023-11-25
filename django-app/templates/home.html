@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}Home{%endblock%}
+{% block content %}
+<div>
+  {%if user.is_authenticated == False%}
+  <div class="container text-center text-black col-md-12 bg-warning">
+    <h1 class="text-black">Hello anon</h1>
+    <div class="row">
+
+      <p>
+        you can
+        <a class="text-decoration-none text-imgframe" href="../register">Login</a>
+        or
+        <a class="text-decoration-none text-imgframe" href="../login">Register</a>
+      </p>
+    </div>
+
+  </div>
+  {%else%}
+  <div class="container d-flex bg-success col-md-12 justify-content-between">
+    <h1 class="my-3">Hello {{user}}</h1>
+</div>
+  {%endif%}
+  <div class="container mt-4">
+    <div class="col-md-12">
+      <h1 class="display-4 text-center">Detecting DeepFakes</h1>
+      <p class="lead text-center">Explore the world of deepfake detection and understand the challenges.</p>
+    </div>
+
+    <!-- Fake Images Section -->
+    <div class="row mt-3">
+      <div class="col-md-5 my-2 mx-auto rounded bg-img-frame">
+        <h2>Are your customers lying to you?</h2>
+        <p>These images are just an example, would you have been fooled?.</p>
+        <img src="{% static 'images/deepfake1.png' %}" alt="Deepfake Image 1" class="img-fluid mb-3">
+        <!-- <img src="{% static 'images/real.png' %}" alt="Deepfake Image 2" class="img-fluid lg-2"> -->
+      </div>
+
+      <!-- Other Content Section -->
+      <div class="col-md-5 my-2 mx-auto bg-attention rounded">
+        <div class="bg-attention rounded">
+
+          <h2>Find out with this demo</h2>
+          <p>Just Click here, and find out about it.</p>
+        </div>
+        <div class="col-md-6 btn bg-secondary-color offset-md-3">
+          <div class="row">
+            <a class="text-center fs-4 text-decoration-none text-light" href="../try-demo?user={{user.pk}}">Try it for
+              free</a>
+          </div>
+        </div>
+        <div class="mt-1">
+          {%for testimony in testimonials%}
+          <div class="row border-top border-bottom border-dark">
+            <h4 class="col">{{testimony.name}}</h4>
+            <div class="row">
+              <p class="col border-dark fss-10">{{testimony.company}}</p>
+              <p class="col border-dark fss-10">{{testimony.testimonial}}</p>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+        <!-- Add more content here -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

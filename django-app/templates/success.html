@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+{%block title%}success{%endblock%}
+
+{%block content%}
+<div class="d-flex flex-column w-50 align-items-center container bg-img-frame">
+
+    <h2>{{fake}}</h2>
+    <h3>{{confidence}}</h3>
+    <div class="col-5">
+        <video class="img-responsive img-thumbnail"src="{{video}}" controls></video>
+    </div>
+    <div class="col-md-5 btn bg-secondary-color my-3">
+        <div class="row">
+          <a class="text-center fs-4 text-decoration-none text-light" href="../">go back</a>
+        </div>
+      </div>
+</div>
+{%endblock%}

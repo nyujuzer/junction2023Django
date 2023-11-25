@@ -1,0 +1,31 @@
+<!-- templates/upload.html -->
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<div class="container mt-5 max-w-50 min-w-25 py-5 bg-img-frame">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">Upload Video</h2>
+            <form class="container" accept="image/jpeg" method="post" enctype="multipart/form-data">
+                <div class="d-flex flex-column align-items-center">
+                    {% csrf_token %}
+                    <input id="video_file" type="file" class="row btn d-block" name="video_file">
+                    <div class="row d-flex flex-column align-items-center">
+                        <div class="col-md-6">
+                            <video src="" class="img-responsive img-thumbnail" id="fileContainer"></video>
+                        </div>
+                    </div>
+
+                    <div class="row col btn bg-secondary-color d-block">
+                        <div class="row">
+                            <button type="submit" class="btn text-light">Upload</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="userid" value="{{ user.id }}">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
